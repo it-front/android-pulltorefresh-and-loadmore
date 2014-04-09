@@ -4,6 +4,7 @@ import android.content.Context;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AbsListView;
 import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
@@ -124,11 +125,11 @@ public class PullAndLoadListView extends PullToRefreshListView {
     public void onLoadMoreComplete() {
         mIsLoadingMore = false;
 
-        try {
-            Thread.sleep(1200);
-        } catch (Exception o) {
-            o.printStackTrace();
-        }
+//        try {
+//            Thread.sleep(1200);
+//        } catch (Exception o) {
+//            o.printStackTrace();
+//        }
 
         mProgressBarLoadMore.setVisibility(View.GONE);
         mLabLoadMore.setVisibility(View.GONE);
@@ -148,4 +149,14 @@ public class PullAndLoadListView extends PullToRefreshListView {
          */
         public void onLoadMore();
     }
+
+
+//    @Override
+//    protected void onMeasure(int widthMeasureSpec, int heightMeasureSpec) {
+//        int expandSpec = MeasureSpec.makeMeasureSpec(MEASURED_SIZE_MASK, MeasureSpec.AT_MOST);
+//        super.onMeasure(widthMeasureSpec, expandSpec);
+//
+//        ViewGroup.LayoutParams params = getLayoutParams();
+//        params.height = getMeasuredHeight();
+//    }
 }
